@@ -53,13 +53,26 @@ for (const countrie of countries2) {
     img$$.src = countrie.imgUrl
     div$$.appendChild(img$$);
     ul3$$.appendChild(div$$)
-    
+    ul3$$.appendChild(div$$)
 }
 document.body.appendChild(ul3$$)
 
 
 // 1.5 Basandote en el ejercicio anterior. Crea un botón que elimine el último 
 // elemento de la lista.
+const buttonForRemove$$ = document.createElement('button');
+buttonForRemove$$.style = 'padding: 5px; width: 80px; background-color: lightblue; border-radius: 5px';
+buttonForRemove$$.textContent = 'click me 😏'
+buttonForRemove$$.addEventListener('click', function(){
+    const findDivs$$ = document.querySelectorAll('div');
+    findDivs$$[findDivs$$.length-1].remove()
+    buttonForRemove$$.textContent = 'OH MY GOD!! 🙆🏻‍♂️'
+    buttonForRemove$$.style = 'background-color: yellow'
+
+})
+document.body.appendChild(buttonForRemove$$);
+
+
 
 // 1.6 Basandote en el ejercicio anterior. Crea un botón para cada uno de los 
 // elementos de las listas que elimine ese mismo elemento del html.
