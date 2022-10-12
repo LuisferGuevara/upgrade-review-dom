@@ -31,13 +31,32 @@ divWithClass$$.appendChild(ul2$$);
 
 // 1.4 Crea dinamicamente en el html una lista de div que contenga un elemento 
 // h4 para el titulo y otro elemento img para la imagen.
-// const countries = [
-// 	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=1'}, 
-// 	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=2'},
-// 	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=3'},
-// 	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=4'},
-// 	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=5'}
-// ];
+const ul3$$ = document.createElement('ul');
+
+const countries2 = [
+	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=1'}, 
+	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=2'},
+	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=3'},
+	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=4'},
+	{title: 'Random title', imgUrl: 'https://picsum.photos/300/200?random=5'}
+];
+
+for (const countrie of countries2) {
+    const div$$ = document.createElement('div');
+
+    const h4$$ = document.createElement('h4');
+    h4$$.textContent = countrie.title
+    div$$.appendChild(h4$$); 
+    console.log(countrie.imgUrl);
+
+    const img$$ = document.createElement('img');
+    img$$.src = countrie.imgUrl
+    div$$.appendChild(img$$);
+    ul3$$.appendChild(div$$)
+    
+}
+document.body.appendChild(ul3$$)
+
 
 // 1.5 Basandote en el ejercicio anterior. Crea un botón que elimine el último 
 // elemento de la lista.
