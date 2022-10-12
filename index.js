@@ -74,37 +74,54 @@ document.body.appendChild(buttonForRemove$$);
 
 // 1.6 Basandote en el ejercicio anterior. Crea un botón para cada uno de los 
 // elementos de las listas que elimine ese mismo elemento del html.
-const button1$$ = document.createElement('button')
-button1$$.textContent = 'Remove Fist Element'
-button1$$.style = 'padding: 5px; width: ; background-color: chocolate; border-radius: 5px; margin: 10px; color:white'
-button1$$.addEventListener('click', function(){
-    const findDivs$$ = document.querySelectorAll('div');
-    findDivs$$[0].remove()
-    button1$$.textContent = 'BYE BYE FIRST!! 🙆🏻‍♂️'
-    button1$$.style = "padding: 5px; background-color: yellow; border-radius: 5px; margin: 10px; color:black"
 
-})
-const button2$$ = document.createElement('button')
-button2$$.textContent = 'Remove Second Element'
-button2$$.style = 'padding: 5px; width: ; background-color:#fabada; border-radius: 5px; margin: 10px; color:white'
-button2$$.addEventListener('click', function(){
-    const findDivs$$ = document.querySelectorAll('div');
-    findDivs$$[1].remove()
-    button2$$.textContent = 'BYE BYE SECOND!! 🙆🏻‍♂️'
-    button2$$.style = "padding: 5px; background-color: yellow; border-radius: 5px; margin: 10px; color:black"
+// const button1$$ = document.createElement('button')
+// button1$$.textContent = 'Remove Fist Element'
+// button1$$.style = 'padding: 5px; width: ; background-color: chocolate; border-radius: 5px; margin: 10px; color:white'
+// button1$$.addEventListener('click', function(){
+//     const findDivs$$ = document.querySelectorAll('div');
+//     findDivs$$[0].remove()
+//     button1$$.textContent = 'BYE BYE FIRST!! 🙆🏻‍♂️'
+//     button1$$.style = "padding: 5px; background-color: yellow; border-radius: 5px; margin: 10px; color:black"
 
-})
-const button3$$ = document.createElement('button')
-button3$$.textContent = 'Remove Third Element'
-button3$$.style = 'padding: 5px; width: ; background-color: tomato; border-radius: 5px; margin: 10px; color:white'
-button3$$.addEventListener('click', function(){
-    const findDivs$$ = document.querySelectorAll('div');
-    findDivs$$[2].remove()
-    button3$$.textContent = 'BYE BYE SECOND!! 🙆🏻‍♂️'
-    button3$$.style = "padding: 5px; background-color: yellow; border-radius: 5px; margin: 10px; color:black"
+// })
+// const button2$$ = document.createElement('button')
+// button2$$.textContent = 'Remove Second Element'
+// button2$$.style = 'padding: 5px; width: ; background-color:#fabada; border-radius: 5px; margin: 10px; color:white'
+// button2$$.addEventListener('click', function(){
+//     const findDivs$$ = document.querySelectorAll('div');
+//     findDivs$$[1].remove()
+//     button2$$.textContent = 'BYE BYE SECOND!! 🙆🏻‍♂️'
+//     button2$$.style = "padding: 5px; background-color: yellow; border-radius: 5px; margin: 10px; color:black"
 
-})
+// })
+// const button3$$ = document.createElement('button')
+// button3$$.textContent = 'Remove Third Element'
+// button3$$.style = 'padding: 5px; width: ; background-color: tomato; border-radius: 5px; margin: 10px; color:white'
+// button3$$.addEventListener('click', function(){
+//     const findDivs$$ = document.querySelectorAll('div');
+//     findDivs$$[2].remove()
+//     button3$$.textContent = 'BYE BYE SECOND!! 🙆🏻‍♂️'
+//     button3$$.style = "padding: 5px; background-color: yellow; border-radius: 5px; margin: 10px; color:black"
 
-document.body.appendChild(button1$$)
-document.body.appendChild(button2$$)
-document.body.appendChild(button3$$)
+// })
+
+// document.body.appendChild(button1$$)
+// document.body.appendChild(button2$$)
+// document.body.appendChild(button3$$)
+
+for (const country of countries2) {
+    let createDiv = document.createElement("div");
+    createDiv.innerHTML = `<h4>${country.title}</h4><img src=${country.imgUrl} />`;
+  
+    let deleteButton = document.createElement("button");
+    deleteButton.textContent = "Here to Remove 😈";
+  
+    createDiv.appendChild(deleteButton);
+  
+    deleteButton.addEventListener("click", function () {
+      createDiv.remove();
+    });
+  
+    document.body.appendChild(createDiv);
+  }
